@@ -65,7 +65,7 @@
 
 | BC        | ![](attachments/image-24.png)                                                                                                                         |
 | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 100 BC    | ADCA or ADCB - Что бы выбрать какой из них то можно устаноаить либо на 1 либо 2<br><br>![](attachments/image-25.png)<br>![](attachments/image-27.png) |
+| 100 BC    | ADCA or ADCB - To choose which one to use, set it to 1 or 2.<br><br>![](attachments/image-25.png)<br>![](attachments/image-27.png) |
 | 101<br>BC | ADCA and ADCB                                                                                                                                         |
 
 # STR and baseline
