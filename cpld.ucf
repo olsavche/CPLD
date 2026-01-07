@@ -1,0 +1,76 @@
+
+
+#--================================================================================================================================
+#-- Title      			: cpld
+#-- File version      	: v1.0
+#-- Author     			: Oleksandr Savchenko
+#-- Company    			: AGH University of Kraków 
+#-- Created    			: 05.01.2026
+#--================================================================================================================================
+
+
+#-- ===============================================================================================================================
+#-- | Signal name        | Dir | Type / Width                 | Altium       | FPGA       | CPLD pin <UCF>                        |
+#-- ===============================================================================================================================
+#-- | i_clk_80mhz        | in  | std_logic                    | ADC_CLK      | -          | <27>                                  |
+#-- | i_cfd              | in  | std_logic                    | STR          | -          | <63>                                  |
+#-- | i_gate_latch       | in  | std_logic                    | ENA          | -          | <64>                                  |
+#-- | i_adc_a            | in  | std_logic_vector(11 downto 0)| ADC_A_D<N>   | -          | <18><19><22><24><23><28-30><32-35> LSB|
+#-- | i_adc_b            | in  | std_logic_vector(11 downto 0)| ADC_B_D<N>   | -          | <36><37><39-44><46><49><50><52> LSB	  |
+#-- |--------------------|-----|------------------------------|--------------|------------|---------------------------------------|
+#-- | o_adc_data         | out | std_logic_vector(12 downto 0)| DI<N>        | DI<N>      | <85-87><89-97><99> LSB                |
+#-- | o_gate_clk_40mhz   | out | std_logic                    | Gate_STR1_1  | -          | <81>                                  |
+#-- | o_intg_clk_n_20mhz | out | std_logic                    | INTG_G_DRV   | -          | <54>                                  |
+#-- | o_intg_clk_p_20mhz | out | std_logic                    | INTA_G_DRV   | -          | <53>                                  |
+#-- | o_data_valid       | out | std_logic                    | STR1         | STR<N>     | <82>                                  |
+#-- ===============================================================================================================================
+
+
+NET "i_clk_80mhz" 	    LOC = '27'; 
+NET "i_gate_latch"  	LOC = '64'; 
+NET "i_cfd" 			LOC = '63'; 
+ 
+NET "i_adc_a<0>" 		LOC = '35'; 
+NET "i_adc_a<1>" 		LOC = '34'; 
+NET "i_adc_a<2>" 		LOC = '33'; 
+NET "i_adc_a<3>" 		LOC = '32'; 
+NET "i_adc_a<4>" 		LOC = '30'; 
+NET "i_adc_a<5>" 		LOC = '29'; 
+NET "i_adc_a<6>" 		LOC = '28'; 
+NET "i_adc_a<7>" 		LOC = '23'; 
+NET "i_adc_a<8>" 		LOC = '24'; 
+NET "i_adc_a<9>" 		LOC = '22'; 
+NET "i_adc_a<10>" 	    LOC = '19'; 
+NET "i_adc_a<11>" 	    LOC = '18'; 
+
+NET "i_adc_b<0>" 		LOC = '52'; 
+NET "i_adc_b<1>" 		LOC = '50'; 
+NET "i_adc_b<2>" 		LOC = '49'; 
+NET "i_adc_b<3>" 		LOC = '46'; 
+NET "i_adc_b<4>" 		LOC = '44'; 
+NET "i_adc_b<5>" 		LOC = '43';
+NET "i_adc_b<6>" 		LOC = '42';
+NET "i_adc_b<7>" 		LOC = '41';
+NET "i_adc_b<8>" 		LOC = '40'; 
+NET "i_adc_b<9>" 		LOC = '39';
+NET "i_adc_b<10>" 	    LOC = '37'; 
+NET "i_adc_b<11>" 	    LOC = '36'; 
+
+NET "o_data_valid" 			LOC = '82';
+NET "o_gate_clk_40mhz" 		LOC = '81'; 
+NET "o_intg_clk_n_20mhz" 	LOC = '54';
+NET "o_intg_clk_p_20mhz" 	LOC = '53';
+
+NET "o_adc_data<0>" 		LOC = '99'; 
+NET "o_adc_data<1>" 		LOC = '97'; 
+NET "o_adc_data<2>" 		LOC = '96'; 
+NET "o_adc_data<3>" 		LOC = '95'; 
+NET "o_adc_data<4>" 		LOC = '94';
+NET "o_adc_data<5>" 		LOC = '93'; 
+NET "o_adc_data<6>" 		LOC = '92'; 
+NET "o_adc_data<7>" 		LOC = '91'; 
+NET "o_adc_data<8>" 		LOC = '90'; 
+NET "o_adc_data<9>" 		LOC = '89'; 
+NET "o_adc_data<10>" 		LOC = '87';
+NET "o_adc_data<11>" 		LOC = '86';
+NET "o_adc_data<12>" 		LOC = '85';
