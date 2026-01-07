@@ -106,5 +106,5 @@ EVOUT will be logical 1 if and only if c_count = "1111111" and cal_str ="1". But
 ![](attachments/image-48.png)
 
 # PM baseline register
-![PM baseline register](attachments/image-49.png|589x277)
+![PM baseline register](attachments/image-49.png)
 ![PM baseline register fpga](attachments/image-50.png)
