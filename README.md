@@ -1,7 +1,3 @@
----
-category:
-  - CERN ALICE FIT
----
 
 # ILA
 ## CPLD clock signals 
