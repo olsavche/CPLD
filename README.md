@@ -5,92 +5,92 @@ category:
 # Oscilloscope measurements
 ## INR
 ### CLK20N / CLK80
-![[attachments/tmp_000.png]]
+![](attachments/tmp_000.png)
 - CH1 - INTB_G_DRV (CLK20N)
 - CH2 - ADCA_CLK (CLK80)
-![[attachments/image-1.png]]
+![](attachments/image-1.png)
 
 ### CLK20N / CLK40
-![[attachments/tmp_001.png]]
+![](attachments/tmp_001.png)
 - CH1 - INTB_G_DRV (CLK20N)
 - CH2 - Gate_STR1_i (CLK40)
-![[attachments/image-4.png]]
+![](attachments/image-4.png)
 ### CLK20N / GATE
-![[attachments/tmp_003.png]]
+![](attachments/tmp_003.png)
 - CH1 - INTB_G_DRV (CLK20N)
 - CH2 - D Flip-Flop PIN1 (GATE)
-![[attachments/image-6.png]]
+![](attachments/image-6.png)
 ## AGH
 ### CLK20N / CLK80
-![[attachments/tmp_003-1.png]]
+![](attachments/tmp_003-1.png)
 - CH1 - INTB_G_DRV (CLK20N)
 - CH2 - ADCA_CLK (CLK80)
-![[attachments/image-2.png]]
+![](attachments/image-2.png)
 ### CLK20N / CLK40
-![[attachments/tmp_004.png]]
+![](attachments/tmp_004.png)
 - CH1 - INTB_G_DRV (CLK20N)
 - CH2 - Gate_STR1_i (CLK40)
-![[attachments/image-7.png]]
+![](attachments/image-7.png)
 ### CLK20N / GATE
-![[attachments/tmp_005.png]]
+![](attachments/tmp_005.png)
 - CH1 - INTB_G_DRV (CLK20N)
 - CH2 - D Flip-Flop PIN1 (GATE)
-![[attachments/image-5.png]]
+![](attachments/image-5.png)
 
 ## Comparison INR and AGH
 
 ### CLK20N / CLK80
-![[attachments/tmp_000.png]]
-![[attachments/tmp_003-1.png]]
+![](attachments/tmp_000.png)
+![](attachments/tmp_003-1.png)
 
 
 ### CLK20N / CLK40
-![[attachments/tmp_001.png]]
-![[attachments/tmp_004.png]]
+![](attachments/tmp_001.png)
+![](attachments/tmp_004.png)
 
 ### CLK20N / GATE
-![[attachments/image.png]]
-![[attachments/tmp_005.png]]
+![](attachments/image.png)
+![](attachments/tmp_005.png)
 
 
 
 # CS measurements
 ## INR CPLD
-![[attachments/image-8.png]]
+![](attachments/image-8.png)
 ## AGH CPLD
-![[attachments/image-9.png]]
+![](attachments/image-9.png)
 ## Comparison INR and AGH
-![[attachments/image-10.png]]
+![](attachments/image-10.png)
 
 # Questions and Answers 
 
 ### Why do we need a gate?
 - In my understanding, the gate is used  for background suppression.
 - Physicists have determined (or measurements showed) that after the BC, the useful signal (СFD event (not backgr.)) is inside this  GATE time (±2.5 ns). This means that the CFD pulse must arrive inside this window GATE if an event happens. If the CFD pulse arrives outside this GATE, it is considered like background.”
-![[attachments/image-29.png]]
+![](attachments/image-29.png)
 
 
 ### How is a ~5 ns CFD gate generated? 
 - CPLD output -> 40 MHz clock
-![[attachments/image-28.png]]
+![](attachments/image-28.png)
 
 ### Can a CFD pulse be shorter than 7 ns?   (Например 2 ns)
 - Yes, because this signal captures the GATE in a D flip-flop (MC10EP52D)
-![[attachments/image-27.png]]
-![[attachments/image-30.png]]
+![](attachments/image-27.png)
+![](attachments/image-30.png)
 
 ### Is the timing relationship between the GATE signal and the BC clock constant?
 - Yes 
-![[attachments/image-26.png]]
-![[attachments/image-25.png]]
-![[attachments/image-20.png]]
+![](attachments/image-26.png)
+![](attachments/image-25.png)
+![](attachments/image-20.png)
 
 ### What time is it between CLK80MHZ and GATE ? 
-![[attachments/image-31.png]]
-![[attachments/image-32.png]]
-![[attachments/image-33.png]]
+![](attachments/image-31.png)
+![](attachments/image-32.png)
+![](attachments/image-33.png)
 - 12.5 ns(GATE) - 2.5ns(80MHZ) = ~10ns 
-- ![[attachments/image-34.png]]
+- ![](attachments/image-34.png)
 
 ### If the timing relationship between the Gate signal and the BC clock changes, will this affect the charge measurement performed by the integrators or cpld? 
 - No 
@@ -105,28 +105,26 @@ category:
 ### CSTR pattern
 - After turning off and on the electronics - CSTR pattern changes
 - I did not observe any correlations between the signals. Signals are independent.
-![[attachments/image-35.png]]
-![[attachments/image-36.png]]
+![](attachments/image-35.png)
+![](attachments/image-36.png)
 ### СFD in Gate CPLD INR
 -  ILA clock = 320[MHz]
 - CSTR1 and mt_cou
-![[attachments/image-37.png]]
+![](attachments/image-37.png)
 - CSTR2 and mt_cou
-![[attachments/image-38.png]]
+![](attachments/image-38.png)
 - CSTR3 and mt_cou
-![[attachments/image-39.png]]
+![](attachments/image-39.png)
 - .........
 - CSTR12 and mt_cou
-![[attachments/image-40.png]]
+![](attachments/image-40.png)
 
 ### CFD in gate
-![[attachments/image-41.png]]
-
-
+![](attachments/image-41.png)
 
 # Other
 ## INR slides
-[[image-11.png]], [[image-12.png]]
+[CFD–ADC Timing](image-11.png), [Timing and Charge Measurement Scheme](image-12.png)
 
 ## PM baseline register 
-[[image-3.png]], [[image-14.png]]
+[RegMap](attachments/image-3.png), [PmVHDL](attachments/image-14.png)
