@@ -1,111 +1,132 @@
+---
+category:
+  - CERN ALICE FIT
+---
+# Oscilloscope measurements
+## INR
+### CLK20N / CLK80
+![[attachments/tmp_000.png]]
+- CH1 - INTB_G_DRV (CLK20N)
+- CH2 - ADCA_CLK (CLK80)
+![[attachments/image-1.png]]
 
-# ILA
-## CPLD clock signals 
-![CPLD clock signals ](attachments/image-8.png)
-## After turning off and on the electronics - CSTR pattern changes
-- I did not observe any correlations between the signals. Signals are independent.  
-![](attachments/image-9.png)
-![](attachments/image-13.png)
+### CLK20N / CLK40
+![[attachments/tmp_001.png]]
+- CH1 - INTB_G_DRV (CLK20N)
+- CH2 - Gate_STR1_i (CLK40)
+![[attachments/image-4.png]]
+### CLK20N / GATE
+![[attachments/tmp_003.png]]
+- CH1 - INTB_G_DRV (CLK20N)
+- CH2 - D Flip-Flop PIN1 (GATE)
+![[attachments/image-6.png]]
+## AGH
+### CLK20N / CLK80
+![[attachments/tmp_003-1.png]]
+- CH1 - INTB_G_DRV (CLK20N)
+- CH2 - ADCA_CLK (CLK80)
+![[attachments/image-2.png]]
+### CLK20N / CLK40
+![[attachments/tmp_004.png]]
+- CH1 - INTB_G_DRV (CLK20N)
+- CH2 - Gate_STR1_i (CLK40)
+![[attachments/image-7.png]]
+### CLK20N / GATE
+![[attachments/tmp_005.png]]
+- CH1 - INTB_G_DRV (CLK20N)
+- CH2 - D Flip-Flop PIN1 (GATE)
+![[attachments/image-5.png]]
 
-## CSTR and mt_cou
-- ILA clock is equal 320[MHz]
-- We can see that the **CSTR** signal from the CPLD appears only at a specific moment, namely when the **mt_cou** signal equals “0”.
-- Also we can be observed that the CSTR signal is active for only four ILA clock cycles. 
-	- 3.125[ns] * 4[cycles] = 12.5[ns]. 
+## Comparison INR and AGH
+
+### CLK20N / CLK80
+![[attachments/tmp_000.png]]
+![[attachments/tmp_003-1.png]]
+
+
+### CLK20N / CLK40
+![[attachments/tmp_001.png]]
+![[attachments/tmp_004.png]]
+
+### CLK20N / GATE
+![[attachments/image.png]]
+![[attachments/tmp_005.png]]
+
+
+
+# CS measurements
+## INR CPLD
+![[attachments/image-8.png]]
+## AGH CPLD
+![[attachments/image-9.png]]
+## Comparison INR and AGH
+![[attachments/image-10.png]]
+
+# Questions and Answers 
+
+### Why do we need a gate?
+- In my understanding, the gate is used  for background suppression.
+- Physicists have determined (or measurements showed) that after the BC, the useful signal (СFD event (not backgr.)) is inside this  GATE time (±2.5 ns). This means that the CFD pulse must arrive inside this window GATE if an event happens. If the CFD pulse arrives outside this GATE, it is considered like background.”
+![[attachments/image-29.png]]
+
+
+### How is a ~5 ns CFD gate generated? 
+- CPLD output -> 40 MHz clock
+![[attachments/image-28.png]]
+
+### Can a CFD pulse be shorter than 7 ns?   (Например 2 ns)
+- Yes, because this signal captures the GATE in a D flip-flop (MC10EP52D)
+![[attachments/image-27.png]]
+![[attachments/image-30.png]]
+
+### Is the timing relationship between the GATE signal and the BC clock constant?
+- Yes 
+![[attachments/image-26.png]]
+![[attachments/image-25.png]]
+![[attachments/image-20.png]]
+
+### What time is it between CLK80MHZ and GATE ? 
+![[attachments/image-31.png]]
+![[attachments/image-32.png]]
+![[attachments/image-33.png]]
+- 12.5 ns(GATE) - 2.5ns(80MHZ) = ~10ns 
+- ![[attachments/image-34.png]]
+
+### If the timing relationship between the Gate signal and the BC clock changes, will this affect the charge measurement performed by the integrators or cpld? 
+- No 
+
+### What affects variations in the data output from the CPLD (signal integration) 
+1. Phase relationship between the 80 MHz and 20 MHz (P and N) signals from the CPLD.
+2. Pulse width of the 20 MHz (P and N) signals.
+
+
+# ILA measurements
+## CPLD INR
+### CSTR pattern
+- After turning off and on the electronics - CSTR pattern changes
+- I did not observe any correlations between the signals. Signals are independent.
+![[attachments/image-35.png]]
+![[attachments/image-36.png]]
+### СFD in Gate CPLD INR
+-  ILA clock = 320[MHz]
 - CSTR1 and mt_cou
-![](attachments/CSTR1_and_mt_cou.png)
+![[attachments/image-37.png]]
 - CSTR2 and mt_cou
-![](attachments/CSTR2_and_mt_cou.png)
+![[attachments/image-38.png]]
 - CSTR3 and mt_cou
-![](attachments/CSTR3_and_mt_cou.png)
-- CSTR4 and mt_cou
-![](attachments/CSTR4_and_mt_cou.png)
-- CSTR5 and mt_cou
-![](attachments/CSTR5_and_mt_cou.png)
-- CSTR6 and mt_cou
-![](attachments/CSTR6_and_mt_cou.png)
-- CSTR7 and mt_cou
-![](attachments/CSTR7_and_mt_cou.png)
-- CSTR8 and mt_cou
-![](attachments/CSTR8_and_mt_cou.png)
-- CSTR9 and mt_cou
-![](attachments/CSTR9_and_mt_cou.png)
-- CSTR10 and mt_cou
-![](attachments/CSTR10_and_mt_cou.png)
-- CSTR11 and mt_cou
-![](attachments/CSTR11_and_mt_cou.png)
+![[attachments/image-39.png]]
+- .........
 - CSTR12 and mt_cou
-![](attachments/CSTR12_and_mt_cou.png)
+![[attachments/image-40.png]]
 
-## CFD and CFD in gate
-- CFD_in gate  -> ENA(Altium),  i_gate_latch(VHDL)
--  CFD  ->  STR(Altium), i_cfd(VHDL)
-![](attachments/CFD_in_gate.png)
+### CFD in gate
+![[attachments/image-41.png]]
 
 
-# ADC Calibrations
-- Before ADC zero calibrations (gate is ~5.5 ns)
-	- СFD in gate = 0 
-		![](attachments/СFD_1.png)
-		![](attachments/СFD_2.png)
-	- CFD in gate = 1 
-		![](attachments/СFD_3.png)
-		![](attachments/СFD_4.png)
-	- СFD in gate = 1
-		![](attachments/СFD_5.png)
-		![](attachments/СFD_6.png)
-	- СFD in gate = 0
-		![](attachments/СFD_7.png)
-		![](attachments/СFD_8.png)
-	- Notes
-		- 12500  ~  ( -2.5 ns <-> 3ns ) 
-		- 11000  ~  ( -4 ns <-> 1.5ns )
-		- 9000   ~   ( -6 ns <-> -0.5ns )
-# Select ADC A, ADC B, or both
 
-| BC        | ![](attachments/image-24.png)                                                                                                                         |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 100 BC    | ADCA or ADCB - To choose which one to use, set it to 1 or 2.<br><br>![](attachments/image-25.png)<br>![](attachments/image-27.png) |
-| 101<br>BC | ADCA and ADCB                                                                                                                                         |
+# Other
+## INR slides
+[[image-11.png]], [[image-12.png]]
 
-# STR and baseline
-- ILA clock is 320[Mhz]
-![](attachments/image-36.png)
-![](attachments/image-42.png)
-![](attachments/image-40.png)
-- Second STR is baseline (ADC 0) (Before that, the calibration was on (ADC 1).)
-# Baseline 
-- If STR (baseline) arrives on channel every 16.736 (320 MHz), it means that channel (ADC A side or ADC B side) updates its baseline every 16.376 x 2 -> 51.175[us] x 2 = 102.35[us]. (in the best case)
-# UCF
-## ADC A - OK 
-![](attachments/image-14.png)
-
-## ADC B - OK
-![](attachments/image-15.png)
-
-## DI - OK
-![](attachments/image-16.png)
-
-## Clock 80 - OK
-![](attachments/image-18.png)
-
-## EV  - Not OK
-cpld - set all pins ZERO
-![](attachments/image-19.png)
-![](attachments/image-20.png)
-![](attachments/image-21.png)
-
-
-#  Code from Warsaw gitub - simulation
-EVOUT will be logical 1 if and only if c_count = "1111111" and cal_str ="1". But this conditional is true only 25 ns  (From this code it follows that EVNT have to go every 256 clock cycle (80 MHZ)) )
-- cal_str
-![](attachments/image-46.png)
-- EV - every 256 clock cycle
-![](attachments/image-47.png)
-- EV - every 300 clock cycle
-![](attachments/image-48.png)
-
-
-# PM baseline registerrr
-![PM baseline register](attachments/image-49.png)
-![PM baseline register fpga](attachments/image-50.png)
+## PM baseline register 
+[[image-3.png]], [[image-14.png]]
