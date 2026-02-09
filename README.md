@@ -1,7 +1,4 @@
----
-category:
-  - CERN ALICE FIT
----
+
 # Oscilloscope measurements
 ## INR
 ### CLK20N / CLK80
