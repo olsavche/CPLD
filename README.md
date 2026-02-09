@@ -1,4 +1,7 @@
-
+---
+category:
+  - CERN ALICE FIT
+---
 # Oscilloscope measurements
 ## INR
 ### CLK20N / CLK80
@@ -71,11 +74,16 @@
 - CPLD output -> 40 MHz clock
 ![](attachments/image-28.png)
 
-### Can a CFD pulse be shorter than 7 ns?   (Например 2 ns)
+### Can a CFD pulse be shorter than 7 ns?   (For example 2 ns)
 - Yes, because this signal captures the GATE in a D flip-flop (MC10EP52D)
 ![](attachments/image-27.png)
 ![](attachments/image-30.png)
-
+- But CFD signal also comes to CPLD 
+	- strb - CFD to CPLD
+	- enai (Gate_STR1_o) - Gate latch
+![](attachments/image-21.png)
+![](attachments/image-22.png)
+- Conclusion: The CFD signal may be so short that it is possible to see the Gate_STR1_o signal in the SPLD. (This also explains why we process the event on the falling edge.)
 ### Is the timing relationship between the GATE signal and the BC clock constant?
 - Yes 
 ![](attachments/image-26.png)
@@ -96,6 +104,10 @@
 1. Phase relationship between the 80 MHz and 20 MHz (P and N) signals from the CPLD.
 2. Pulse width of the 20 MHz (P and N) signals.
 
+# ToDo
+
+## 3 BC before and 1 BC afer
+![](image-16.png)
 
 # ILA measurements
 ## CPLD INR
@@ -121,7 +133,10 @@
 
 # Other
 ## INR slides
-[CFD–ADC Timing](image-11.png), [Timing and Charge Measurement Scheme](image-12.png)
+[CFD_ADC_Timing](image-11.png), [Timing_and_Charge_Measurement_Scheme](image-12.png)
 
 ## PM baseline register 
 [RegMap](attachments/image-3.png), [PmVHDL](attachments/image-14.png)
+
+# Links 
+[Warsaw CPLD](https://github.com/alice-fit-fee-upgrade/FIT_PM_GW_CPLD )
