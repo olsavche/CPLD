@@ -168,28 +168,3 @@
 - EV  - Not OK [EV](attachments/image-56.png)
 # Links 
 [Warsaw CPLD](https://github.com/alice-fit-fee-upgrade/FIT_PM_GW_CPLD )
-
-# END
-# ---------------------------------------------
-# My notes (other)
-## INR slides
-[CFD_ADC_Timing](attachments/image-11.png), [Timing_and_Charge_Measurement_Scheme](attachments/image-12.png)
-
-## PM baseline register 
-[RegMap](attachments/image-3.png), [PmVHDL](attachments/image-14.png)
-
-## Event 
-![PM_SCH](attachments/image-51.png)
-![PM_PCB](attachments/image-52.png)
-
-## Integrators
-![|450x425](attachments/image-57.png)
-
-## CPLD to FPGA
-|     | CPLD    | FPGA top | IBUF   | Channel | Channel(in) |
-| --- | ------- | -------- | ------ | ------- | ----------- |
-| out | STR1    | STR12    | CSTR12 | CSTR    | CSTR_0      |
-| out | DI0..12 | DI12     | CH12   | CH      | CH_0        |
-
-## ?? 
-[](attachments/image-59.png)
