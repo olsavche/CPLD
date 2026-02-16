@@ -1,4 +1,3 @@
-
 # Oscilloscope measurements
 ## INR
 ### CLK20N / CLK80
@@ -46,9 +45,10 @@
 ![](attachments/tmp_004.png)
 
 ### CLK20N / GATE
+- In my opinion, the phase between these signals will change every time the CPLD code changes (the phase between CLK80 and CLK40 will change). (CLK40 + analog PM parts - gives GATE)
 ![](attachments/image.png)
 ![](attachments/tmp_005.png)
-
+![](attachments/image-61.png)
 
 
 # CS measurements
@@ -108,8 +108,10 @@
 2. Pulse width of the 20 MHz (P and N) signals.
 
 # ToDo
-## Vertex (zero) ? 
-## Measure the EV signal using an oscilloscope. 
+## Check again whether the calibration works on the AGH CPLD 
+- CFD zero calibration
+## Vertex (zero) ? Plateau ? 
+## Measure the EV signal using an oscilloscope.  (Also measure during calibration)
 ![EV](attachments/image-58.png)
 
 ## 3 BC before and 1 BC afer
@@ -168,3 +170,6 @@
 - EV  - Not OK [EV](attachments/image-56.png)
 # Links 
 [Warsaw CPLD](https://github.com/alice-fit-fee-upgrade/FIT_PM_GW_CPLD )
+
+
+
